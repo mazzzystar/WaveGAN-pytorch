@@ -2,4 +2,3 @@ numpy
 librosa
 pescador
 matplotlib
-

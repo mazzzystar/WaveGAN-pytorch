@@ -1,7 +1,5 @@
 # WaveGAN-pytorch
-This repo is based on [chrisdonahue's](https://github.com/chrisdonahue/wavegan#build-datasets) and [jtcramer's](https://github.com/jtcramer/wavegan) implementation of [Synthesizing Audio with Generative Adversarial Networks(Chris Donahue, Feb 2018)](https://arxiv.org/abs/1802.04208).
-
-.
+PyTorch implementation of [Synthesizing Audio with Generative Adversarial Networks(Chris Donahue, Feb 2018)](https://arxiv.org/abs/1802.04208).
 
 ## Dataset
 You can find these datasets at [this URL](https://github.com/chrisdonahue/wavegan#build-datasets).
@@ -30,20 +28,17 @@ nsml run -v -d sc09Wav -e train.py
 ![](imgs/archi.png)
 
 ## Results
-Generated "0-9":
+Generated "0-9": https://soundcloud.com/mazzzystar/sets/dcgan-sc09
 
-https://soundcloud.com/mazzzystar/sets/dcgan-sc09
+Generated piano: https://soundcloud.com/mazzzystar/sets/wavegan-piano
 
-Generated piano:
-
-https://soundcloud.com/mazzzystar/sets/wavegan-piano
-
-Loss:
+Loss curve:
 
 ![](imgs/loss_curve.png)
 
 ## TODO
 * [ ] Add some evaluation experiments, eg. inception score.
 
-## Contact & thanks
+## Thanks
+This repo is based on [chrisdonahue's](https://github.com/chrisdonahue/wavegan#build-datasets) and [jtcramer's](https://github.com/jtcramer/wavegan) implementation.
 
