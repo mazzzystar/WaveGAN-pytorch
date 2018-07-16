@@ -40,5 +40,5 @@ Loss curve:
 * [ ] Add some evaluation experiments, eg. inception score.
 
 ## Thanks
-This repo is based on [chrisdonahue's](https://github.com/chrisdonahue/wavegan#build-datasets) and [jtcramer's](https://github.com/jtcramer/wavegan) implementation.
+This repo is based on [chrisdonahue's](https://github.com/chrisdonahue/wavegan) and [jtcramer's](https://github.com/jtcramer/wavegan) implementation.
 
