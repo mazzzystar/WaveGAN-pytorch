@@ -14,9 +14,9 @@ sudo apt-get install libav-tools
 * `piano`: [Piano raw WAV files](http://deepyeti.ucsd.edu/cdonahue/mancini_piano.tar.gz)
 
 3. Run
+For `sc09Wav` task, make sure sc09Wav dataset under your current project filepath befor run your code.
 ```
-# Make sure sc09Wav dataset under your current project filepath.
-python train.py
+$ python train.py
 ```
 
 #### Training time
