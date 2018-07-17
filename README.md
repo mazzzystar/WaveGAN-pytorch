@@ -8,18 +8,24 @@ You can find these datasets at [this URL](https://github.com/chrisdonahue/wavega
 
 Befor running, make sure you have the `sc09Wav` dataset, and put that dataset under your current filepath.
 
-## Installation
+## Quick Start:
+1. Installation
 ```
 sudo apt-get install libav-tools
 ```
 
-## Run
-For SC09 generation task:
+2. Download dataset
+[sc09Wav](http://deepyeti.ucsd.edu/cdonahue/sc09.tar.gz)
+Put that dataset under your current project filepath.
+As mentioned prevoius.
+[Piano raw WAV files](http://deepyeti.ucsd.edu/cdonahue/mancini_piano.tar.gz)
+
+3. Run
 ```
 nsml run -v -d sc09Wav -e train.py
 ```
 
-### Training time
+#### Training time
 * For `SC09Wav` dataset, 4 X Tesla P40 takes nearly 2 days to get reasonable result.
 * For `piano` piano dataset, 2 X Tesla P40 takes 3-6 hours to get reasonable result.
 * Decrease the `BATCH_SIZE` from 64 to 16 can acquire faster gradient descent but longer per-epoch time on multiple-GPU.
