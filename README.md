@@ -1,11 +1,6 @@
 # WaveGAN-pytorch
 PyTorch implementation of [Synthesizing Audio with Generative Adversarial Networks(Chris Donahue, Feb 2018)](https://arxiv.org/abs/1802.04208).
 
-## Dataset
-You can find these datasets at [this URL](https://github.com/chrisdonahue/wavegan#build-datasets).
-* `sc09Wav`: utterances of number "0"-"9". (20,000+ pieces each 1 second, 400MB)
-* `Piano`: piano waves. (100MB)
-
 Befor running, make sure you have the `sc09Wav` dataset, and put that dataset under your current filepath.
 
 ## Quick Start:
@@ -15,10 +10,10 @@ sudo apt-get install libav-tools
 ```
 
 2. Download dataset
-[sc09Wav](http://deepyeti.ucsd.edu/cdonahue/sc09.tar.gz)
+* `sc09Wav`: [sc09 raw WAV files](http://deepyeti.ucsd.edu/cdonahue/sc09.tar.gz), utterances of spoken english words '0'-'9'
 Put that dataset under your current project filepath.
 As mentioned prevoius.
-[Piano raw WAV files](http://deepyeti.ucsd.edu/cdonahue/mancini_piano.tar.gz)
+* `piano`: [Piano raw WAV files](http://deepyeti.ucsd.edu/cdonahue/mancini_piano.tar.gz)
 
 3. Run
 ```
@@ -30,9 +25,6 @@ nsml run -v -d sc09Wav -e train.py
 * For `piano` piano dataset, 2 X Tesla P40 takes 3-6 hours to get reasonable result.
 * Decrease the `BATCH_SIZE` from 64 to 16 can acquire faster gradient descent but longer per-epoch time on multiple-GPU.
 
-## Architecture
-![](imgs/archi.png)
-
 ## Results
 Generated "0-9": https://soundcloud.com/mazzzystar/sets/dcgan-sc09
 
@@ -42,9 +34,11 @@ Loss curve:
 
 ![](imgs/loss_curve.png)
 
+## Architecture
+![](imgs/archi.png)
+
 ## TODO
 * [ ] Add some evaluation experiments, eg. inception score.
 
-## Thanks
+## Contributions
 This repo is based on [chrisdonahue's](https://github.com/chrisdonahue/wavegan) and [jtcramer's](https://github.com/jtcramer/wavegan) implementation.
-
