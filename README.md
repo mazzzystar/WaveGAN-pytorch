@@ -11,13 +11,12 @@ sudo apt-get install libav-tools
 
 2. Download dataset
 * `sc09Wav`: [sc09 raw WAV files](http://deepyeti.ucsd.edu/cdonahue/sc09.tar.gz), utterances of spoken english words '0'-'9'
-Put that dataset under your current project filepath.
-As mentioned prevoius.
 * `piano`: [Piano raw WAV files](http://deepyeti.ucsd.edu/cdonahue/mancini_piano.tar.gz)
 
 3. Run
 ```
-nsml run -v -d sc09Wav -e train.py
+# Make sure sc09Wav dataset under your current project filepath.
+python train.py
 ```
 
 #### Training time
