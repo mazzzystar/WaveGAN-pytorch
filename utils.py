@@ -25,6 +25,11 @@ def make_path(output_path):
     return output_path
 
 
+DATASET_NAME = 'sc09'
+traindata = DATASET_NAME + "/"
+output = make_path('output/')
+
+
 def time_since(since):
     now = time.time()
     s = now - since
@@ -112,7 +117,8 @@ def split_data(audio_path_list, valid_ratio, test_ratio, batch_size):
     num_test = int(np.ceil(num_files * test_ratio))
     num_train = num_files - num_valid - num_test
 
-    assert num_valid > 0 and num_test > 0 and num_train > 0
+    if not (num_valid > 0 and num_test > 0 and num_train > 0):
+        LOGGER.error("Please download DATASET '{}' and put it under current path !".format(DATASET_NAME))
 
     # Random shuffle the audio_path_list for splitting.
     random.shuffle(audio_path_list)
@@ -197,11 +203,6 @@ def plot_loss(D_cost_train, D_wass_train, D_cost_valid, D_wass_valid,
     plt.tight_layout()
 
     plt.savefig(save_path)
-
-
-DATASET_NAME = 'sc09Wav'
-traindata = DATASET_NAME + "/"
-output = make_path('output/')
 
 
 def parse_arguments():
