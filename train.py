@@ -207,7 +207,7 @@ for epoch in range(1, epochs+1):
             G_cost = G_cost.cpu()
         G_cost_epoch.append(G_cost.data.numpy()[0])
 
-        if i % (BATCH_NUM // 8) == 0:
+        if i % (BATCH_NUM // 5) == 0:
             LOGGER.info("{} Epoch={} Batch: {}/{} D_c:{:.4f} | D_w:{:.4f} | G:{:.4f}".format(time_since(start), epoch,
                                                                                              i, BATCH_NUM,
                                                                                              D_cost_train.data.numpy()[0],
