@@ -23,7 +23,7 @@ $ python train.py
 #### Training time
 * For `SC09` dataset, 4 X Tesla P40 takes nearly 2 days to get reasonable result.
 * For `piano` piano dataset, 2 X Tesla P40 takes 3-6 hours to get reasonable result.
-* Decrease the `BATCH_SIZE` from 64 to 16 can acquire faster gradient descent but longer per-epoch time on multiple-GPU.
+* Increase the `BATCH_SIZE` from 10 to 32 or 64 can acquire shorter per-epoch time on multiple-GPU but lower gradient descent.
 
 ## Results
 Generated "0-9": https://soundcloud.com/mazzzystar/sets/dcgan-sc09

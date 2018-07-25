@@ -51,7 +51,7 @@ class WaveGANGenerator(nn.Module):
 
         for m in self.modules():
             if isinstance(m, nn.ConvTranspose1d) or isinstance(m, nn.Linear):
-                nn.init.kaiming_normal(m.weight.data)
+                nn.init.kaiming_normal_(m.weight.data)
 
     def forward(self, x):
         x = self.fc1(x).view(-1, 16 * self.model_size, 16)
@@ -155,7 +155,7 @@ class WaveGANDiscriminator(nn.Module):
 
         for m in self.modules():
             if isinstance(m, nn.Conv1d) or isinstance(m, nn.Linear):
-                nn.init.kaiming_normal(m.weight.data)
+                nn.init.kaiming_normal_(m.weight.data)
 
     def forward(self, x):
         x = F.leaky_relu(self.conv1(x), negative_slope=self.alpha)

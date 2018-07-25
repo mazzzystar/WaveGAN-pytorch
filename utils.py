@@ -8,6 +8,7 @@ import librosa
 import argparse
 import pescador
 import numpy as np
+from config import *
 from torch import autograd
 from torch.autograd import Variable
 import matplotlib
@@ -25,9 +26,8 @@ def make_path(output_path):
     return output_path
 
 
-DATASET_NAME = 'sc09'
-traindata = DATASET_NAME + "/"
-output = make_path('output/')
+traindata = DATASET_NAME
+output = make_path(OUTPUT_PATH)
 
 
 def time_since(since):
@@ -225,16 +225,16 @@ def parse_arguments():
                         help='Ratio of audio files used for validation')
     parser.add_argument('-tr', '--test-ratio', dest='test_ratio', type=float, default=0.1,
                         help='Ratio of audio files used for testing')
-    parser.add_argument('-bs', '--batch-size', dest='batch_size', type=int, default=64,
+    parser.add_argument('-bs', '--batch-size', dest='batch_size', type=int, default=BATCH_SIZE,
                         help='Batch size used for training')
-    parser.add_argument('-ne', '--num-epochs', dest='num_epochs', type=int, default=180, help='Number of epochs')
+    parser.add_argument('-ne', '--num-epochs', dest='num_epochs', type=int, default=EPOCHS, help='Number of epochs')
     parser.add_argument('-ng', '--ngpus', dest='ngpus', type=int, default=4,
                         help='Number of GPUs to use for training')
     parser.add_argument('-ld', '--latent-dim', dest='latent_dim', type=int, default=100,
                         help='Size of latent dimension used by generator')
-    parser.add_argument('-eps', '--epochs-per-sample', dest='epochs_per_sample', type=int, default=1,
+    parser.add_argument('-eps', '--epochs-per-sample', dest='epochs_per_sample', type=int, default=SAMPLE_EVERY,
                         help='How many epochs between every set of samples generated for inspection')
-    parser.add_argument('-ss', '--sample-size', dest='sample_size', type=int, default=10,
+    parser.add_argument('-ss', '--sample-size', dest='sample_size', type=int, default=SAMPLE_NUM,
                         help='Number of inspection samples generated')
     parser.add_argument('-rf', '--regularization-factor', dest='lmbda', type=float, default=10.0,
                         help='Gradient penalty regularization factor')
