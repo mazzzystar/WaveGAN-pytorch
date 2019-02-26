@@ -171,10 +171,10 @@ for epoch in range(1, epochs+1):
                 D_wass_valid = D_wass_valid.cpu()
 
             # Record costs
-            D_cost_train_epoch.append(D_cost_train.data.numpy()[0])
-            D_wass_train_epoch.append(D_wass_train.data.numpy()[0])
-            D_cost_valid_epoch.append(D_cost_valid.data.numpy()[0])
-            D_wass_valid_epoch.append(D_wass_valid.data.numpy()[0])
+            D_cost_train_epoch.append(D_cost_train.data.numpy()
+            D_wass_train_epoch.append(D_wass_train.data.numpy()
+            D_cost_valid_epoch.append(D_cost_valid.data.numpy()
+            D_wass_valid_epoch.append(D_wass_valid.data.numpy()
 
         #############################
         # (3) Train Generator
@@ -205,14 +205,14 @@ for epoch in range(1, epochs+1):
         # Record costs
         if cuda:
             G_cost = G_cost.cpu()
-        G_cost_epoch.append(G_cost.data.numpy()[0])
+        G_cost_epoch.append(G_cost.data.numpy())
 
         if i % (BATCH_NUM // 5) == 0:
             LOGGER.info("{} Epoch={} Batch: {}/{} D_c:{:.4f} | D_w:{:.4f} | G:{:.4f}".format(time_since(start), epoch,
                                                                                              i, BATCH_NUM,
-                                                                                             D_cost_train.data.numpy()[0],
-                                                                                             D_wass_train.data.numpy()[0],
-                                                                                             G_cost.data.numpy()[0]))
+                                                                                             D_cost_train.data.numpy(),
+                                                                                             D_wass_train.data.numpy(),
+                                                                                             G_cost.data.numpy()))
 
     # Save the average cost of batches in every epoch.
     D_cost_train_epoch_avg = sum(D_cost_train_epoch) / float(len(D_cost_train_epoch))
