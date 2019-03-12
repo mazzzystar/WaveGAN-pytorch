@@ -171,10 +171,10 @@ for epoch in range(1, epochs+1):
                 D_wass_valid = D_wass_valid.cpu()
 
             # Record costs
-            D_cost_train_epoch.append(D_cost_train.data.numpy()
-            D_wass_train_epoch.append(D_wass_train.data.numpy()
-            D_cost_valid_epoch.append(D_cost_valid.data.numpy()
-            D_wass_valid_epoch.append(D_wass_valid.data.numpy()
+            D_cost_train_epoch.append(D_cost_train.data.numpy())
+            D_wass_train_epoch.append(D_wass_train.data.numpy())
+            D_cost_valid_epoch.append(D_cost_valid.data.numpy())
+            D_wass_valid_epoch.append(D_wass_valid.data.numpy())
 
         #############################
         # (3) Train Generator
