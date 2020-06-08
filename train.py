@@ -98,8 +98,8 @@ for epoch in range(1, epochs+1):
         # Set Discriminator parameters to require gradients.
         for p in netD.parameters():
             p.requires_grad = True
-
-        one = torch.Tensor([1]).float()
+  
+        one = torch.tensor(1, dtype=torch.float)
         neg_one = one * -1
         if cuda:
             one = one.cuda()
